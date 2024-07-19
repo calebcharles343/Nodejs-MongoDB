@@ -1,0 +1,40 @@
+Node.js: 
+is an open-source, cross-platform JavaScript runtime environment,
+built with the chrome v8 runtime engine
+that executes JavaScript code outside of a web browser. 
+It's designed to build scalable network applications and 
+can handle many connections simultaneously. 
+It operates on a single-threaded event-driven architecture, 
+which makes it efficient and suitable for I/O-heavy workloads.
+
+Key features include:
+- **Asynchronous and Event-Driven**: All APIs of the Node.js library 
+are asynchronous, meaning non-blocking. It essentially 
+means a Node.js-based server never waits for an API to return data.
+
+- **Single-Threaded but Highly Scalable**: Node.js uses a single-threaded 
+model with event looping.
+
+- **No Buffering**: Node.js applications never buffer any data. 
+They simply output the data in chunks.
+
+Companies that use node.js:
+- LinkedIn
+- Netflix
+- Walmart
+- Uber
+- Paypal
+- Ebay
+
+Where to use node.js:
+- I/O bound applications e.g human to system and sytem to human
+- Data Streaming applications e.g Netflix
+- Real-time applications e.g Chat
+- JSON APIs based applications
+
+Where not use Node.js:
+- CPU intensiive applications: because node.js is single threaded
+
+
+It's commonly used for creating web servers, developing backend services (APIs), and building tools and utilities.
+

@@ -1,0 +1,9 @@
+In Node.js, controllers are JavaScript functions that handle the logic 
+for processing client requests and returning responses. 
+- They are typically used in MVC (Model-View-Controller) architecture 
+to separate the concerns of an application. 
+- Controllers interact with models to retrieve data and decide 
+how to present that data, often by selecting a view. 
+- They act as an intermediary between models, which handle data, and views,
+which handle presentation.
+

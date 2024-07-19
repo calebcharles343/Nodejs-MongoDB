@@ -1,0 +1,37 @@
+In Node.js, the thread pool is a collection of threads used by certain 
+operations that cannot be performed asynchronously at the operating system
+level. The thread pool is part of the libuv library, which Node.js uses to 
+handle asynchronous I/O operations.
+
+The thread pool is used for operations like:
+- File system APIs (except for file watching)
+- DNS queries
+- Cryptographic operations
+- User-defined tasks using `worker_threads` module
+
+By default, the thread pool size is four, but it can be 
+increased or decreased by setting the `UV_THREADPOOL_SIZE` environment 
+variable before starting your Node.js application.
+
+Here's how it works:
+1. When an operation that requires the thread pool is initiated eg. Heavy 
+   task like file system compression, decompression e.t.c., Node.js submits 
+   a task to the thread pool.
+2. A thread from the pool is assigned to execute that task.
+3. Once the task is completed, a callback associated with that task is 
+   added to the event loop's queue.
+4. The event loop eventually executes that callback to complete the operation.
+
+The use of a thread pool allows Node.js to handle many types of blocking 
+I/O operations in a non-blocking way, without needing to create a new 
+thread for every task, which would be inefficient and resource-intensive.
+
+NOTE: Program Process
+1, The program initializes
+2, Requires all the modules
+3, Register the callbacks
+4, Start the event loop
+
+NOTE: Threadpool 
+
+

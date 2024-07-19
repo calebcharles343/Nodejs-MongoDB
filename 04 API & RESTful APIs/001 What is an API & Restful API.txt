@@ -1,0 +1,61 @@
+API (Application Programming Interface):
+in Node.js is a set of rules and specifications that allows different 
+software applications to communicate with each other. 
+It defines the kinds of calls or requests that can be made, 
+how to make them, the data formats that should be used, 
+and the conventions to follow. Essentially, 
+it's a way for different parts of a program to 
+interact with and utilize services provided by another part, 
+whether within the same application or from an external service.
+
+A RESTful API: 
+is an API that adheres to the principles of REST 
+(Representational State Transfer):
+It's a set of guidelines for creating web services that allow 
+for interactions with representations of web resources using a 
+predefined set of stateless operations. In RESTful APIs, resources 
+are identified by URLs, and the standard HTTP methods 
+(GET, POST, PUT, DELETE, etc.) are used to perform operations on them. 
+
+Rules of  RESTful API:
+- Client-server:
+This constraint operates on the concept that the client and the server
+should be separate from each other and allowed to evolve individually.
+- Stateless:
+Means that call can be made independently of one another, and each call contains
+all of the data necessary to complete itself successfully. E.G. next pape
+- Use Logical Resources:
+The key absraction of information in REST is a resource.
+any information that can be named can be a resource e.g. user, job
+- Resource Based URL:
+Must use resource Based URL E.G. /api/v1/newUser
+- Use HTTP methods:
+Shoul use proper htttp methods e.g. 
+GET /user instead of  /getAllUsers
+POST /user/new instead of /createNewUser
+PUT /user/12 instead of /updateUser/12
+DELETE /user/12 instead of  /deleteUser/12
+- Send data in JSON(mostly):
+API should send data back in form of JSON(JavaScript Object Notation) e.g.
+{
+  'id': 1,
+  'name': 'Charles',
+  'bonus': false
+}
+
+The main principles or rules of RESTful APIs are:
+
+1. **Client-Server**: There should be a clear separation between the 
+client and the server.
+2. **Stateless**: Each request from the client to the server must contain 
+all the information needed to understand and complete the request.
+3. **Cacheable**: Responses must be defined as cacheable or not to 
+prevent clients from reusing stale or inappropriate data.
+4. **Uniform Interface**: The interface between clients and servers 
+should be uniform, simplifying and decoupling the architecture, 
+which enables each part to evolve independently.
+5. **Layered System**: The client should not be able to tell whether it 
+is connected directly to the end server, or to an intermediary along the way.
+6. **Code on Demand (optional)**: Servers can extend client functionality 
+by transferring executable code.
+

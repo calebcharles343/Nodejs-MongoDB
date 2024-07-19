@@ -1,0 +1,13 @@
+In Node.js, a config file is used to manage configuration options and 
+settings for an application. It typically contains parameters that might 
+change based on the environment (development, testing, production) 
+such as database connection details, API keys, or application ports. 
+This allows you to easily change settings without altering the application's
+ code. Config files can be in various formats like JSON, YAML, or even 
+ JavaScript modules exporting configuration objects.
+
+Note: you neve ever add '.env' file to git
+
+
+
+ 

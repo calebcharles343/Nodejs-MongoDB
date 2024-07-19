@@ -1,0 +1,24 @@
+In Node.js, a callback is a function passed into another function as an 
+argument, which is then invoked inside the outer function to complete 
+some kind of routine or action. Callbacks are a fundamental part of 
+Node.js and are used to handle asynchronous operations like reading 
+files, making HTTP requests, or querying a database.
+
+Here's a simple example of a callback used in reading a file 
+asynchronously with the `fs` module:
+
+```javascript
+const fs = require('fs');
+
+fs.readFile('/path/to/file', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading the file:', err);
+    return;
+  }
+  console.log('File content:', data);
+});
+```
+
+In this example, `fs.readFile` is an asynchronous function that 
+reads the file at the given path and takes a callback function as its third argument. This callback is called when the file read operation is complete. The callback receives two arguments: `err` (error object, if any error occurred) and `data` (the content of the file).
+

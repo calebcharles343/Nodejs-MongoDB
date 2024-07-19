@@ -1,0 +1,7 @@
+In Node.js, routes are used to define different endpoints and how 
+the server should respond to client requests to these endpoints. 
+Each route can have one or more handler functions, which are executed 
+when the route is matched. Routes are defined by a path and an HTTP method 
+(GET, POST, PUT, DELETE, etc.), and they help organize the logic of 
+your application by associating functions with specific request paths 
+and methods. This makes it easier to manage and scale web applications.

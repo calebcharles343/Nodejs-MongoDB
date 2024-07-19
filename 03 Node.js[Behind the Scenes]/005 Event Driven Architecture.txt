@@ -1,0 +1,6 @@
+In Node.js, Event-Driven Architecture is implemented using the 
+EventEmitter class from the 'events' module. This allows objects 
+to emit named events which cause function objects ("listeners") to 
+be called. It's a core concept in Node.js and is used in many built-in 
+modules. Would you like me to look up some resources or examples on how 
+to implement EDA in Node.js?

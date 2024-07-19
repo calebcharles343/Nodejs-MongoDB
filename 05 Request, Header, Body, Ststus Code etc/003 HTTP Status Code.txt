@@ -1,0 +1,40 @@
+Here's a concise list of common HTTP response status codes:
+
+- **1xx (Informational)**: Communicates transfer protocol-level information.
+  - 100 Continue
+  - 101 Switching Protocols
+  - 102 Processing
+  - 103 Early hints
+
+- **2xx (Success)**: Indicates that the client's request was accepted 
+successfully.
+  - 200 OK
+  - 201 Created
+  - 202 Accepted : Recieved but not acted upon.
+  - 203 Non-Authoritative information
+  - 204 No Content
+  - 205 Reset Content
+
+- **3xx (Redirection)**: Indicates that further action needs to be 
+ by the user agent in order to fulfill the request.
+  - 300 Multiple Choice : more than one posible response.
+  - 301 Moved Permanently
+  - 302 Found
+  - 304 Not Modified
+
+- **4xx (Client Error)**: Indicates an error that seems to have been 
+caused by the client.
+  - 400 Bad Request
+  - 401 Unauthorized
+  - 403 Forbidden
+  - 404 Not Found
+  - 409 Conflict
+
+- **5xx (Server Error)**: Indicates that the server failed to fulfill 
+an apparently valid request.
+  - 500 Internal Server Error
+  - 501 Not Implemented
+  - 503 Service Unavailable
+
+for more visit 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Status'
+These codes are part of the HTTP specification and are used in RESTful API communication to indicate the result of the requested operation.

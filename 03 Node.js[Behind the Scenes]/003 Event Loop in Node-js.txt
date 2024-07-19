@@ -1,0 +1,68 @@
+Thread:
+is a unit of operation that our CPU has to perform for us
+
+Event Loop:
+in thread, something called loop is generated.
+  the role if this loop is to schedule which operations
+our only thread shold be performing at any given point.
+
+complete process of an Event loop:
+The event loop is a fundamental aspect of Node.js that allows 
+it to handle asynchronous operations without multi-threading. 
+Here's a high-level overview of how the event loop works:
+
+1. **Initialization**: When a Node.js process starts, 
+it initializes the event loop, processes the provided 
+input script (or drops into the REPL, which is not typical 
+for server applications), and begins processing the event loop.
+
+2. **Timers Phase**: This phase executes callbacks scheduled by
+ `setTimeout()` and `setInterval()`.
+
+3. **I/O Callbacks Phase**: Executes almost all callbacks with the 
+exception of close callbacks, the ones scheduled by timers, 
+and `setImmediate()`.
+
+4. **Idle, Prepare Phase**: Only used internally.
+
+5. **Poll Phase**: Retrieve new I/O events; execute I/O related 
+callbacks (almost all with the exception of close callbacks, 
+those scheduled by timers, and `setImmediate()`); 
+node will block here when appropriate.
+
+6. **Check Phase**: `setImmediate()` callbacks are invoked here.
+
+7. **Close Callbacks Phase**: Some close callbacks, like 
+`socket.on('close', ...)`.
+
+8. **Process.nextTick()**: It's not a part of the event loop 
+phases, but it allows you to schedule a callback function to be 
+invoked at the end of the current operation, before switching to 
+the next phase in the event loop.
+
+9. **`setImmediate()` vs `setTimeout()`**: A `setImmediate()` 
+callback is always executed in the check phase, while a `setTimeout()`
+callback will run once its timer expires, potentially in any phase if 
+it expires before reaching the timers phase again.
+
+10. **Exiting**: If there are no more scheduled tasks in the event 
+loop, Node.js will terminate.
+
+This process allows Node.js to perform non-blocking I/O 
+operations — despite JavaScript being single-threaded — by 
+offloading operations to the system kernel whenever possible.
+
+{
+event loop process:
+
+step 1: Everything schedule with setTimeout or setInterval will be executed 
+        here.
+step 2: Pending OS task are executed and check for callbacks that are ready 
+        to be called.
+step 3: Pause the execution and wait for new events to occur.
+step 4: checks if functions related to pending timers related to 
+        setImmediate() function are ready to be called
+step 5: Manage the close events.
+}
+
+Note: the Event loop is automatically blocked when the code is blocked
